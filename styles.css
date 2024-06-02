@@ -1,83 +1,76 @@
-/* styles.css */
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
 }
 
 header {
-    background: #4CAF50;
+    background-color: #4CAF50;
     color: white;
-    padding: 1em 0;
-}
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header h1 {
-    margin: 0;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-nav ul li {
-    margin: 0 1em;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-.hero-section {
-    background: url('farm-background.jpg') no-repeat center center/cover;
-    color: white;
-    padding: 5em 0;
+    padding: 1em;
     text-align: center;
 }
-
-.hero-section h2 {
-    font-size: 2.5em;
-    margin: 0;
+header h2{
+    
+    color: rgb(255, 1, 1);
+}
+main {
+    padding: 2em;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1em;
-}
-
-section {
-    padding: 2em 0;
-}
-
-.products-section .product {
-    border: 1px solid #ddd;
-    padding: 1em;
-    margin: 1em 0;
+h2 {
+    color: #4CAF50;
 }
 
 .gallery {
     display: flex;
-    justify-content: space-between;
+    gap: 10px;
+
 }
 
 .gallery img {
     width: 30%;
+    border-radius: 8px;
+}
+
+.product {
+    background-color: white;
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.product h3 {
+    margin-top: 0;
 }
 
 footer {
-    background: #333;
-    color: white;
     text-align: center;
-    padding: 1em 0;
+    padding: 1em;
+    background-color: #4CAF50;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
+
+iframe {
+    display: block;
+    margin: 0 auto;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateY(0);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+.product:hover {
+    animation: rotate 2s infinite;
+}
+
