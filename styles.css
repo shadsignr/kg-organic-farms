@@ -1,76 +1,91 @@
+/* styles.css */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f4f4f9;
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: #388e3c;
     color: white;
-    padding: 1em;
     text-align: center;
-}
-header h2{
-    
-    color: rgb(255, 1, 1);
-}
-main {
-    padding: 2em;
+    padding: 1em 0;
 }
 
-h2 {
-    color: #4CAF50;
+nav {
+    background-color: #2e7d32;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+section {
+    padding: 2em;
+    text-align: center;
+}
+
+#home-3d {
+    width: 100%;
+    height: 400px;
+    background: url(./imgvid/360_F_357547735_aTZvm1ec8Uzgsd1aTukmFiOw4iXX2aKS.jpg) ;
+    
+}
+
+.product {
+    display: inline-block;
+    width: 200px;
+    margin: 1em;
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
 }
 
 .gallery {
     display: flex;
-    gap: 10px;
-
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .gallery img {
-    width: 30%;
-    border-radius: 8px;
+    width: 200px;
+    height: auto;
+    margin: 10px;
 }
 
-.product {
-    background-color: white;
-    padding: 1em;
-    margin: 1em 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.videos {
+    display: flex;
+    justify-content: center;
 }
 
-.product h3 {
-    margin-top: 0;
+.videos iframe {
+    margin: 10px;
 }
 
 footer {
-    text-align: center;
-    padding: 1em;
-    background-color: #4CAF50;
+    background-color: #388e3c;
     color: white;
-    position: fixed;
-    width: 100%;
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
     bottom: 0;
+    width: 100%;
 }
-
-iframe {
-    display: block;
-    margin: 0 auto;
-}
-
-@keyframes rotate {
-    from {
-        transform: rotateY(0);
-    }
-    to {
-        transform: rotateY(360deg);
-    }
-}
-
-.product:hover {
-    animation: rotate 2s infinite;
-}
-
