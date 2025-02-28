@@ -3,20 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Under Maintenance</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Farmer Selection</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kavivanar&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Kavivanar', cursive;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-bottom: 3px solid #ffcc00;
+        }
+        .logo {
+            width: 80px;
+        }
+        h1 {
+            font-size: 24px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .search-bar {
+            margin: 10px 0;
+        }
+        input {
+            padding: 5px;
+            width: 60%;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+            text-align: center;
+        }
+        .toggle-button {
+            padding: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            background: #ffcc00;
+            border: none;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+    </style>
+    <!-- Google Input Tools API -->
+    <script src="https://www.google.com/jsapi"></script>
 </head>
 <body>
     <div class="container">
-        <div class="content">
-            <h1>We’ll be back soon!</h1>
-            <p>Sorry for the inconvenience but we’re performing some maintenance at the moment. We’ll be back shortly!</p>
-            <p>-KG FARMS</p>
-            <h1>Location: Kannadipalayam,Mylambadi,Bhavani,Erode.</h1>
-            <h1>Contact: 8667860070, 9842378445</h1>
-            <h1></h1>
+        <header>
+            <img src="logo.png" alt="Logo" class="logo">
+            <h1>Milk Vending Machine | பால் விற்பனை இயந்திரம்</h1>
+        </header>
+
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search Farmer..." onclick="showKeyboard()">
+            <button class="toggle-button" onclick="toggleLanguage()">Switch to Tamil</button>
         </div>
+
+        <div class="farmer-list" id="farmerList"></div>
     </div>
+
+    <footer>
+        Footer Content Here
+    </footer>
+
+    <script>
+        google.load("elements", "1", { packages: "transliteration" });
+        let control;
+
+        function onLoad() {
+            const options = {
+                sourceLanguage: 'en',
+                destinationLanguage: ['ta', 'en'],
+                transliterationEnabled: true
+            };
+            control = new google.elements.transliteration.TransliterationControl(options);
+            control.makeTransliteratable(["searchInput"]);
+        }
+
+        function showKeyboard() {
+            control.showControl("searchInput");
+        }
+
+        function toggleLanguage() {
+            let currentLang = control.getLanguage();
+            let newLang = currentLang === "en" ? "ta" : "en";
+            control.setLanguage(newLang);
+            document.querySelector(".toggle-button").textContent = newLang === "ta" ? "Switch to English" : "Switch to Tamil";
+        }
+
+        google.setOnLoadCallback(onLoad);
+    </script>
 </body>
 </html>
-
